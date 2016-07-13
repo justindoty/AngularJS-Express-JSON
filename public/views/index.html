@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="olympicApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Solo Angular Challenge</title>
+    <link rel="stylesheet" type="text/css" href="/views/stylesheet.css" />
+    <script src="/vendor/angular.min.js"></script>
+    <script src="/js/client.js"></script>
+  </head>
+  <body ng-controller="OlympicController">
+    <div class="wrapper">
+
+
+    <header>
+      <img ng-src="views/teamusa.png" />
+      <h1>'Merica Marketing Company</h1>
+      <h2>Proudly pretending to sponsor TEAM USA athletes since summer 2016</h2>
+    </header>
+    <div class="buttondiv">
+          <button ng-click="getTeams()">Random 5 athletes</button>
+    </div>
+    <div class="displaySection">
+
+
+      <div class="big" ng-repeat="athlete in olympics track by $index">
+        <h1>{{athlete.sport}}</h1>
+        <img ng-src={{athlete.img}} />
+        <h2>{{athlete.name}}</h2>
+        <h3>{{athlete.hometown}}</h3>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
